@@ -31,7 +31,7 @@ export default async function Home() {
         id="noggle"
         href="https://nouns.wtf"
         draggable={false}
-        className="fixed top-8 left-8 z-10"
+        className="fixed top-8 h-9 flex items-center left-8 z-10"
       >
         <img
           src="/icons/noggle.svg"
