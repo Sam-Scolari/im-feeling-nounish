@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/x",
+      "destination": "https://x.com/feelingnounish",
+      "permanent": true
+    },
+    {
+      "source": "/warpcast",
+      "destination": "https://warpcast.com/feelingnounish",
+      "permanent": true
+    }
+  ]
+}
