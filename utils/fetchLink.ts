@@ -34,4 +34,5 @@ const links = [
   "https://www.imdb.com/title/tt21823412/",
   "https://www.youtube.com/watch?v=lOzCA7bZG_k",
   "https://twitter.com/nounsdao",
+  "https://warpcast.com/~/channel/nouns",
 ];
