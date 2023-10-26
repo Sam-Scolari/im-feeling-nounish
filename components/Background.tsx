@@ -1,12 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Background(props: { isMobile: boolean; link: string }) {
   const [redirected, setRedirected] = useState(false);
-
-  const router = useRouter();
 
   function reset() {
     setRedirected(false);
@@ -35,7 +32,9 @@ export default function Background(props: { isMobile: boolean; link: string }) {
         muted
         playsInline
         preload="auto"
-        poster="/placeholder.webp"
+        poster={
+          props.isMobile ? "/placeholder-mobile.webp" : "/placeholder.webp"
+        }
         onClick={(e) => {
           e.currentTarget.play();
         }}
@@ -43,8 +42,6 @@ export default function Background(props: { isMobile: boolean; link: string }) {
           setRedirected(true);
           e.currentTarget.currentTime = 0;
           window.location.href = props.link;
-
-          // router.refresh();
         }}
         onTimeUpdate={(e) => {
           if (e.currentTarget.currentTime > 0.6) {
