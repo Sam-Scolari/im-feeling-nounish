@@ -12,7 +12,7 @@ export default async function Home() {
       <Background isMobile={isMobile} link={link} />
       <h1
         id="title"
-        className="absolute select-none pointer-events-none text-[525%] max-2xl:text-[450%] max-lg:text-[325%] h-52 font-londrina-solid font-semibold text-center"
+        className="absolute select-none leading-none pointer-events-none text-[525%] max-2xl:text-[450%] max-lg:text-[325%] h-52 font-londrina-solid font-semibold text-center"
       >
         I'm feeling Nounish
       </h1>
