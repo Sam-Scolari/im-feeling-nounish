@@ -11,6 +11,7 @@ const londrinaSolid = Londrina_Solid({
 export const metadata: Metadata = {
   title: "I'm Feeling Nounish",
   description: "Discover new and upcoming nounish people, places, and things!",
+  themeColor: "#43faa7",
 };
 
 export default function RootLayout({
