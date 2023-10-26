@@ -35,6 +35,7 @@ export default function Background(props: { isMobile: boolean; link: string }) {
         muted
         playsInline
         preload="auto"
+        poster="/placeholder.webp"
         onClick={(e) => {
           e.currentTarget.play();
         }}
