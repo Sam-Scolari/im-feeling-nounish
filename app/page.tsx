@@ -12,7 +12,7 @@ export default async function Home() {
     <main className="relative bg-green h-[100svh] flex items-center justify-center">
       <Head>
 <meta property="fc:frame" content="vNext" />
-<meta property="fc:frame:image" content="http://...image-question.png" />
+<meta property="fc:frame:image" content="https://nouns.ooo/placeholder.webp" />
 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" /></Head>
       <Background isMobile={isMobile} link={link} />
       <h1
