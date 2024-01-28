@@ -11,11 +11,14 @@ export default async function Home() {
   return (
     <main className="relative bg-green h-[100svh] flex items-center justify-center">
       <Head>
-        <meta property="fc:frame" content="vNext" />
+        <title>I'm feeling Nounish</title>
         <meta
-          property="fc:frame:image"
-          content="https://nouns.ooo/placeholder.webp"
+          name="description"
+          content="Discover new and upcoming nounish people, places, and things!"
         />
+        <meta property="og:image" content="/og.png"></meta>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="/og.png" />
         <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
       </Head>
       <Background isMobile={isMobile} link={link} />
@@ -66,7 +69,7 @@ export default async function Home() {
             className="w-9 h-9 rounded-lg"
           />
         </a>
-        <a
+        {/* <a
           href="/warpcast"
           target="_blank"
           rel="noopener noreferrer"
@@ -79,7 +82,7 @@ export default async function Home() {
             draggable={false}
             className="w-9 h-9 rounded-lg"
           />
-        </a>
+        </a> */}
       </div>
     </main>
   );
