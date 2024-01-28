@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: "I'm Feeling Nounish",
   description: "Discover new and upcoming nounish people, places, and things!",
   themeColor: "#43faa7",
+  openGraph: {
+    title: "I'm Feeling Nounish",
+    description:
+      "Discover new and upcoming nounish people, places, and things!",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({

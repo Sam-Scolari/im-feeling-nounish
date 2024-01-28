@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://nouns.ooo/og.png" />
         <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
-        <meta property="fc:frame:post_url" content="https://nouns.ooo">
+        <meta property="fc:frame:post_url" content="https://nouns.ooo/frame">
       </head>
     </html>
         
@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
         <!DOCTYPE html>
         <html>
           <head>
-                    <meta property="fc:frame" content="vNext" />
-                    <meta property="fc:frame:image" content="https://nouns.ooo/placeholder.webp" />
+                <meta property="fc:frame" content="vNext" />
+                <meta property="fc:frame:image" content="https://nouns.ooo/placeholder.webp" />
           </head>
         </html>
         `,
