@@ -4,7 +4,7 @@ export default async function fetchLink() {
   return links[Math.floor(Math.random() * links.length)];
 }
 
-const links = [
+export const links = [
   "https://nouns.wtf",
   "https://nouns.gg",
   "https://nounish.world",
@@ -35,4 +35,5 @@ const links = [
   "https://www.youtube.com/watch?v=lOzCA7bZG_k",
   "https://twitter.com/nounsdao",
   "https://warpcast.com/~/channel/nouns",
+  "https://bound.wtf",
 ];
