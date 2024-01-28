@@ -1,7 +1,7 @@
 import Background from "@/components/Background";
 import fetchLink from "@/utils/fetchLink";
 import { headers } from "next/headers";
-import { Head } from "next/head";
+import Head from "next/head";
 
 export default async function Home() {
   const isMobile = headers().get("x-device-type") === "mobile";
@@ -11,9 +11,13 @@ export default async function Home() {
   return (
     <main className="relative bg-green h-[100svh] flex items-center justify-center">
       <Head>
-<meta property="fc:frame" content="vNext" />
-<meta property="fc:frame:image" content="https://nouns.ooo/placeholder.webp" />
-<meta property="fc:frame:button:1" content="I'm Feeling Nounish" /></Head>
+        <meta property="fc:frame" content="vNext" />
+        <meta
+          property="fc:frame:image"
+          content="https://nouns.ooo/placeholder.webp"
+        />
+        <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
+      </Head>
       <Background isMobile={isMobile} link={link} />
       <h1
         id="title"
