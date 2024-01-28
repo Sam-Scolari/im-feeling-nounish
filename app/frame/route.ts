@@ -33,12 +33,8 @@ export async function POST(request: NextRequest) {
         <!DOCTYPE html>
         <html>
           <head>
-                <meta property="og:title" content="test" />
-                <meta property="og:description" content="test2" />
-                <meta property="og:image" content="${image}" />
                 <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image" content="${image}" />
-                <meta property="fc:frame:button:1" content="Explore →" />
           </head>
         </html>
         `,
