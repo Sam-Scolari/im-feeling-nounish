@@ -1,23 +1,6 @@
 import Background from "@/components/Background";
 import fetchLink from "@/utils/fetchLink";
 import { headers } from "next/headers";
-import Head from "next/head";
-import { NextRequest, NextResponse } from "next/server";
-
-export async function POST(request: NextRequest) {
-  return new NextResponse(
-    `
-        <!DOCTYPE html>
-        <html>
-          <head>
-                    <meta property="fc:frame" content="vNext" />
-                    <meta property="fc:frame:image" content="/og.png" />
-          </head>
-        </html>
-        `,
-    { status: 200, headers: { "content-type": "text/html" } }
-  );
-}
 
 export default async function Home() {
   const isMobile = headers().get("x-device-type") === "mobile";
@@ -26,17 +9,6 @@ export default async function Home() {
 
   return (
     <main className="relative bg-green h-[100svh] flex items-center justify-center">
-      <Head>
-        <title>I'm feeling Nounish</title>
-        <meta
-          name="description"
-          content="Discover new and upcoming nounish people, places, and things!"
-        />
-        <meta property="og:image" content="/og.png"></meta>
-        <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="/og.png" />
-        <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
-      </Head>
       <Background isMobile={isMobile} link={link} />
       <h1
         id="title"
