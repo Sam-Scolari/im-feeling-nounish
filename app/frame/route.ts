@@ -16,7 +16,17 @@ export async function POST(request: NextRequest) {
   if (data.untrustedData.buttonIndex === 2) {
     console.log(
       "Link",
-      Object.keys(new URL(request.url).searchParams.get("hash") as any)
+      (new URL(request.url).searchParams.get("hash") as any)[0](
+        new URL(request.url).searchParams.get("hash") as any
+      )[1](new URL(request.url).searchParams.get("hash") as any)[2](
+        new URL(request.url).searchParams.get("hash") as any
+      )[3](new URL(request.url).searchParams.get("hash") as any)[4](
+        new URL(request.url).searchParams.get("hash") as any
+      )[5](new URL(request.url).searchParams.get("hash") as any)[6](
+        new URL(request.url).searchParams.get("hash") as any
+      )[7](new URL(request.url).searchParams.get("hash") as any)[8](
+        new URL(request.url).searchParams.get("hash") as any
+      )[9](new URL(request.url).searchParams.get("hash") as any)[10]
     );
     return NextResponse.redirect(
       new URL(request.url).searchParams.get("hash") as string,
