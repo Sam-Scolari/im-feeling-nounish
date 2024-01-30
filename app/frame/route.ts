@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
         <meta property="og:description" content="Discover new and upcoming nounish people, places, and things!" />
         <meta property="og:image" content="https://nouns.ooo/og.png" />
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://nouns.ooo/og.png" />
+        <meta property="fc:frame:image" content="https://nouns.ooo/og.png?date=170656427946" />
         <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
       </head>
     </html>
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
                   "sha256"
                 )
                   .update(link)
-                  .digest("hex")}.png" />
+                  .digest("hex")}.png?date=170656427946" />
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
                 <meta property="fc:frame:button:2:action" content="post_redirect" />
