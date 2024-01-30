@@ -1,7 +1,6 @@
 import { links } from "@/utils/fetchLink";
 import fs from "fs";
 import { join } from "path";
-import { createHash } from "crypto";
 import captureWebsite from "capture-website";
 import ogs from "open-graph-scraper";
 import sharp from "sharp";

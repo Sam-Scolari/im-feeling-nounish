@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
                 <meta property="fc:frame:button:2:action" content="post_redirect" />
-                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?link=${link.url}" />
+                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?id=${link.url}" />
           </head>
         </html>
         `,
