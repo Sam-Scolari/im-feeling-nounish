@@ -7,11 +7,11 @@ export async function POST(request: NextRequest) {
 
   let link = await fetchLink();
 
-  const hash = createHash("sha256").update(link.url).digest("hex");
-
   while (link.imageType === "none") {
     link = await fetchLink();
   }
+
+  const hash = createHash("sha256").update(link.url).digest("hex");
 
   if (data.untrustedData.buttonIndex === 2) {
     return NextResponse.redirect(
