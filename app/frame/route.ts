@@ -1,6 +1,5 @@
 import fetchLink from "@/utils/fetchLink";
 import { NextRequest, NextResponse } from "next/server";
-import { createHash } from "crypto";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
@@ -11,13 +10,13 @@ export async function POST(request: NextRequest) {
     link = await fetchLink();
   }
 
-  const hash = createHash("sha256").update(link.url).digest("hex");
+  const id = new URL(link.url).hostname.replace(/\./g, "-");
 
   if (data.untrustedData.buttonIndex === 2) {
-    console.log(request.url);
-    console.log(new URL(request.url).searchParams.get("link") as string);
     return NextResponse.redirect(
-      new URL(request.url).searchParams.get("link") as string,
+      `https://nouns.ooo/redirects/${
+        new URL(request.url).searchParams.get("id") as string
+      }`,
       302
     );
   }
@@ -28,7 +27,7 @@ export async function POST(request: NextRequest) {
         <html>
           <head>
                 <meta property="fc:frame" content="vNext" />
-                <meta property="fc:frame:image" content="https://nouns.ooo/frame-images/${hash}.png" />
+                <meta property="fc:frame:image" content="https://nouns.ooo/frame-images/${id}.png" />
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
                 <meta property="fc:frame:button:2:action" content="post_redirect" />

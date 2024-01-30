@@ -54,12 +54,12 @@ async function getOGImage(url: string) {
     const image =
       imageType === "capture" ? await captureImage(url) : await getOGImage(url);
 
+    const urlObject = new URL(url);
+
+    const id = urlObject.hostname.replace(/\./g, "-");
+
     fs.writeFileSync(
-      join(
-        __dirname,
-        "../public/frame-images/",
-        `${createHash("sha256").update(url).digest("hex")}.png`
-      ),
+      join(__dirname, "../public/frame-images/", `${id}.png`),
       image
     );
   }
