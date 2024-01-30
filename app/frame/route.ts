@@ -20,9 +20,9 @@ export async function POST(request: NextRequest) {
       .digest("hex")}.png`
   );
 
-  if (data.untrustedData.buttonIndex === 2) {
-    return redirect(link, RedirectType.replace);
-  }
+  // if (data.untrustedData.buttonIndex === 2) {
+  //   return redirect(link, RedirectType.replace);
+  // }
 
   return new NextResponse(
     `
@@ -37,10 +37,11 @@ export async function POST(request: NextRequest) {
                   .digest("hex")}.png" />
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
-                <meta property="fc:frame:button:2:action" content="post_redirect" />
           </head>
         </html>
         `,
     { status: 200, headers: { "content-type": "text/html" } }
   );
 }
+
+// <meta property="fc:frame:button:2:action" content="post_redirect" />
