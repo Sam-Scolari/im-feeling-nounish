@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (data.untrustedData.buttonIndex === 2) {
+    console.log("Redirecting to", link.url);
     return NextResponse.redirect(link.url, 302);
   }
 
