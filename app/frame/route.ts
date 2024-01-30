@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
   while (link.imageType === "none") {
     link = await fetchLink();
   }
-
+  //
   if (data.untrustedData.buttonIndex === 2) {
     console.log(
       "Link",
