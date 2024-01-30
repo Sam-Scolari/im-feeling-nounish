@@ -1,6 +1,7 @@
 import fetchLink from "@/utils/fetchLink";
 import { NextRequest, NextResponse } from "next/server";
 import Images from "@/public/images.json";
+import { RedirectType, redirect } from "next/navigation";
 
 export async function GET(request: NextRequest) {
   return new NextResponse(
@@ -22,12 +23,18 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  console.log(await request.json());
+  const data = await request.json();
 
-  //   const link= await fetchLink()
+  //   const link = await fetchLink();
   const link = "https://nouns.gg";
 
   const image = Images[link];
+
+  if (data.untrustedData.buttonIndex === 2) {
+    return redirect(link, RedirectType.replace);
+  }
+
+  console.log(image);
 
   return new NextResponse(
     `
