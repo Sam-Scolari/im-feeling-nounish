@@ -1,28 +1,19 @@
 import fetchLink from "@/utils/fetchLink";
 import { NextRequest, NextResponse } from "next/server";
-import { RedirectType, redirect } from "next/navigation";
 import { createHash } from "crypto";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
 
-  // let link = await fetchLink();
+  let link = await fetchLink();
 
-  // while (link.imageType === "none") {
-  //   link = await fetchLink();
-  // }
+  while (link.imageType === "none") {
+    link = await fetchLink();
+  }
 
-  const link = "https://www.yellowcollective.xyz/";
-
-  console.log(
-    `https://nouns.ooo/frame-images/${createHash("sha256")
-      .update(link)
-      .digest("hex")}.png`
-  );
-
-  // if (data.untrustedData.buttonIndex === 2) {
-  //   return redirect(link, RedirectType.replace);
-  // }
+  if (data.untrustedData.buttonIndex === 2) {
+    return NextResponse.redirect(link.url, 302);
+  }
 
   return new NextResponse(
     `
@@ -33,10 +24,11 @@ export async function POST(request: NextRequest) {
                 <meta property="fc:frame:image" content="https://nouns.ooo/frame-images/${createHash(
                   "sha256"
                 )
-                  .update(link)
+                  .update(link.url)
                   .digest("hex")}.png" />
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
+                <meta property="fc:frame:button:2:action" content="post_redirect" />
                 <meta property="fc:frame:post_url" content="https://nouns.ooo/frame" />
           </head>
         </html>
@@ -44,5 +36,3 @@ export async function POST(request: NextRequest) {
     { status: 200, headers: { "content-type": "text/html" } }
   );
 }
-
-// <meta property="fc:frame:button:2:action" content="post_redirect" />
