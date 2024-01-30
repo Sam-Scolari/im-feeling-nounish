@@ -33,6 +33,12 @@ export async function POST(request: NextRequest) {
 
   const link = "https://nouns.gg";
 
+  console.log(
+    `https://nouns.ooo/frame-images/${createHash("sha256")
+      .update(link)
+      .digest("hex")}.png`
+  );
+
   if (data.untrustedData.buttonIndex === 2) {
     return redirect(link, RedirectType.replace);
   }
