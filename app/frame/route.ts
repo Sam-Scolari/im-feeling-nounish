@@ -12,8 +12,11 @@ export async function POST(request: NextRequest) {
   }
 
   if (data.untrustedData.buttonIndex === 2) {
-    console.log("Redirecting to", link.url);
-    return NextResponse.redirect(link.url, 302);
+    console.log("Link", new URL(link.url).searchParams.get("link"));
+    return NextResponse.redirect(
+      new URL(link.url).searchParams.get("link") as string,
+      302
+    );
   }
 
   return new NextResponse(
@@ -30,7 +33,7 @@ export async function POST(request: NextRequest) {
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
                 <meta property="fc:frame:button:2:action" content="post_redirect" />
-                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame" />
+                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?link=${link}" />
           </head>
         </html>
         `,
