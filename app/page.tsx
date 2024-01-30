@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <main className="relative bg-green h-[100svh] flex items-center justify-center">
-      <Background isMobile={isMobile} link={link} />
+      <Background isMobile={isMobile} link={link.url} />
       <h1
         id="title"
         className="absolute select-none leading-none pointer-events-none text-[525%] max-2xl:text-[450%] max-lg:text-[325%] h-52 font-londrina-solid font-semibold text-center"
@@ -57,7 +57,7 @@ export default async function Home() {
             className="w-9 h-9 rounded-lg"
           />
         </a>
-        {/* <a
+        <a
           href="/warpcast"
           target="_blank"
           rel="noopener noreferrer"
@@ -70,7 +70,7 @@ export default async function Home() {
             draggable={false}
             className="w-9 h-9 rounded-lg"
           />
-        </a> */}
+        </a>
       </div>
     </main>
   );

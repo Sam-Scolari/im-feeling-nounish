@@ -1,39 +1,41 @@
 export const dynamic = "force-dynamic";
 
+type Link = {
+  url: string;
+  imageType: "capture" | "og" | "none";
+};
+
 export default async function fetchLink() {
   return links[Math.floor(Math.random() * links.length)];
 }
 
 export const links = [
-  "https://nouns.wtf",
-  "https://nouns.gg",
-  "https://nounish.world",
-  "https://nounsai.wtf",
-  "https://noundation.wtf",
-  "https://noggles.wtf",
-  "https://nouns.build",
-  "https://prop.house",
-  "https://thatsgnar.ly",
-  "https://lilnouns.wtf/",
-  "https://nounsagora.com/",
-  "https://nounsvision.com/",
-  "https://nouns.substack.com/",
-  "https://nns.xyz/",
-  "https://www.federation.wtf/",
-  "https://www.nounsapp.wtf/",
-  "https://www.premiere.wtf/",
-  "https://nouns-crystal-ball.netlify.app/",
-  "https://dune.com/hildobby/nouns",
-  "https://www.figma.com/community/plugin/1045020359359636829/Nouns",
-  "https://lostnouns.wtf/",
-  "https://archives.wtf/",
-  "https://art.haus/",
-  "https://nouns.center/",
-  "https://beacons.ai/thenounsquare",
-  "https://nouns.wtf/playground",
-  "https://www.imdb.com/title/tt21823412/",
-  "https://www.youtube.com/watch?v=lOzCA7bZG_k",
-  "https://twitter.com/nounsdao",
-  "https://warpcast.com/~/channel/nouns",
-  "https://bound.wtf",
-];
+  { url: "https://nouns.wtf", imageType: "capture" },
+  { url: "https://nouns.gg", imageType: "capture" },
+  { url: "https://nounish.world", imageType: "capture" },
+  { url: "https://noundation.wtf", imageType: "og" },
+  { url: "https://noggles.wtf", imageType: "og" },
+  { url: "https://nouns.build", imageType: "og" },
+  { url: "https://prop.house", imageType: "og" },
+  { url: "https://thatsgnar.ly", imageType: "capture" },
+  { url: "https://lilnouns.wtf/", imageType: "capture" },
+  { url: "https://nounsagora.com/", imageType: "og" },
+  { url: "https://nounsvision.com/", imageType: "capture" },
+  { url: "https://nouns.substack.com/archive", imageType: "og" },
+  { url: "https://nns.xyz/", imageType: "capture" },
+  { url: "https://www.federation.wtf/", imageType: "capture" },
+  { url: "https://www.nounsapp.wtf/", imageType: "capture" },
+  { url: "https://www.premiere.wtf/", imageType: "capture" },
+  { url: "https://nouns-crystal-ball.netlify.app/", imageType: "capture" },
+  { url: "https://dune.com/hildobby/nouns", imageType: "none" },
+  { url: "https://lostnouns.wtf/", imageType: "capture" },
+  { url: "https://archives.wtf/", imageType: "og" },
+  { url: "https://art.haus/", imageType: "capture" },
+  { url: "https://nouns.center/", imageType: "og" },
+  { url: "https://www.yellowcollective.xyz/", imageType: "og" },
+  { url: "https://nouns.wtf/playground", imageType: "capture" },
+  { url: "https://www.youtube.com/watch?v=lOzCA7bZG_k", imageType: "og" },
+  { url: "https://twitter.com/nounsdao", imageType: "none" },
+  { url: "https://warpcast.com/~/channel/nouns", imageType: "none" },
+  { url: "https://bound.wtf", imageType: "capture" },
+] satisfies Link[];
