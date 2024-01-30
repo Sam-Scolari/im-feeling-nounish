@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
   const hash = createHash("sha256").update(link.url).digest("hex");
 
   if (data.untrustedData.buttonIndex === 2) {
+    console.log(request.url);
     return NextResponse.redirect(
       new URL(request.url).searchParams.get("link") as string,
       302
