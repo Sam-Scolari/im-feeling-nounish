@@ -22,8 +22,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  console.log(request.body);
-  console.log("testing");
+  console.log(request.json());
 
   //   const link= await fetchLink()
   const link = "https://nouns.gg";
