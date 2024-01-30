@@ -3,13 +3,13 @@ import fetchLink from "@/utils/fetchLink";
 import { headers } from "next/headers";
 
 export default async function Home() {
-  const isMobile = headers().get("x-device-type") === "mobile";
+  // const isMobile = headers().get("x-device-type") === "mobile";
 
   const link = await fetchLink();
 
   return (
     <main className="relative bg-green h-[100svh] flex items-center justify-center">
-      <Background isMobile={isMobile} link={link.url} />
+      <Background isMobile={false} link={link.url} />
       <h1
         id="title"
         className="absolute select-none leading-none pointer-events-none text-[525%] max-2xl:text-[450%] max-lg:text-[325%] h-52 font-londrina-solid font-semibold text-center"

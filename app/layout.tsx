@@ -31,10 +31,7 @@ export default function RootLayout({
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://nouns.ooo/og.png" />
         <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
-        <meta
-          property="fc:frame:post_url"
-          content="https://nouns.ooo/api/frame"
-        />
+        <meta property="fc:frame:post_url" content="https://nouns.ooo/frame" />
       </head>
       <body className={londrinaSolid.variable}>{children}</body>
     </html>
