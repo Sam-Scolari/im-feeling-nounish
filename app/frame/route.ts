@@ -13,7 +13,6 @@ export async function GET(request: NextRequest) {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://nouns.ooo/og.png" />
         <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
-        <meta property="fc:frame:post_url" content="https://nouns.ooo/frame">
       </head>
     </html>
         
@@ -23,6 +22,8 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  console.log(request.body);
+
   //   const link= await fetchLink()
   const link = "https://nouns.gg";
 
@@ -35,6 +36,9 @@ export async function POST(request: NextRequest) {
           <head>
                 <meta property="fc:frame" content="vNext" />
                 <meta property="fc:frame:image" content="${image}" />
+                <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
+                <meta property="fc:frame:button:2" content="Explore ➜" />
+                <meta property="fc:frame:button:2:action" content="post_redirect" />
           </head>
         </html>
         `,
