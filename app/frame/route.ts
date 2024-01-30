@@ -14,8 +14,8 @@ export async function POST(request: NextRequest) {
   }
 
   if (data.untrustedData.buttonIndex === 2) {
-    console.log(request.url.split("?hash=")[1]);
-    return NextResponse.redirect(request.url.split("?hash=")[1], 302);
+    console.log(request.url.split("?link=")[1]);
+    return NextResponse.redirect(request.url.split("?link=")[1], 302);
   }
 
   return new NextResponse(
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
                 <meta property="fc:frame:button:2:action" content="post_redirect" />
-                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?hash=${hash}" />
+                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?link=${link}" />
           </head>
         </html>
         `,
