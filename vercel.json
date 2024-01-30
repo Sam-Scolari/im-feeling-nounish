@@ -7,7 +7,7 @@
     },
     {
       "source": "/warpcast",
-      "destination": "https://warpcast.com/feelingnounish",
+      "destination": "https://warpcast.com/~/channel/nouns",
       "permanent": true
     }
   ]
