@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Londrina_Solid } from "next/font/google";
-import Head from "next/head";
 
 const londrinaSolid = Londrina_Solid({
   subsets: ["latin"],
@@ -28,12 +27,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://nouns.ooo/og.png" />
         <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
         <meta property="fc:frame:post_url" content="https://nouns.ooo/frame" />
-      </Head>
+      </head>
       <body className={londrinaSolid.variable}>{children}</body>
     </html>
   );
