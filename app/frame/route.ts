@@ -12,9 +12,12 @@ export async function POST(request: NextRequest) {
   }
 
   if (data.untrustedData.buttonIndex === 2) {
-    console.log("Link", new URL(request.url).searchParams.get("link"));
+    console.log(
+      "Link",
+      Object.keys(new URL(request.url).searchParams.get("link"))
+    );
     return NextResponse.redirect(
-      new URL(request.url).searchParams.get("link") as string,
+      new URL(request.url).searchParams.get("link"),
       302
     );
   }
