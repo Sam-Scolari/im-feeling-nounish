@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
                   .digest("hex")}.png" />
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
+                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame" />
           </head>
         </html>
         `,
