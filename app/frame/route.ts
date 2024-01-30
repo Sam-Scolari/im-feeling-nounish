@@ -30,11 +30,11 @@ export async function POST(request: NextRequest) {
 
   const image = Images[link];
 
+  console.log(image);
+
   if (data.untrustedData.buttonIndex === 2) {
     return redirect(link, RedirectType.replace);
   }
-
-  console.log(image);
 
   return new NextResponse(
     `
