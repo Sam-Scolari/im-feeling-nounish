@@ -14,11 +14,8 @@ export async function POST(request: NextRequest) {
   }
 
   if (data.untrustedData.buttonIndex === 2) {
-    console.log(request.url);
-    return NextResponse.redirect(
-      new URL(request.url).searchParams.get("hash") as string,
-      302
-    );
+    console.log(request.url.split("?hash=")[1]);
+    return NextResponse.redirect(request.url.split("?hash=")[1], 302);
   }
 
   return new NextResponse(
