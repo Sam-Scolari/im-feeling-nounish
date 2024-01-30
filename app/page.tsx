@@ -3,7 +3,8 @@ import fetchLink from "@/utils/fetchLink";
 import { headers } from "next/headers";
 
 export default async function Home() {
-  const isMobile = headers().get("x-device-type") === "mobile";
+  // const isMobile = headers().get("x-device-type") === "mobile";
+  const isMobile = false;
 
   const link = await fetchLink();
 
