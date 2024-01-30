@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
   //   link = await fetchLink();
   // }
 
-  const link = "https://nouns.gg";
+  const link = "https://www.yellowcollective.xyz/";
 
   console.log(
     `https://nouns.ooo/frame-images/${createHash("sha256")
