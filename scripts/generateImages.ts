@@ -42,7 +42,7 @@ async function getOGImage(url: string) {
 }
 
 (async () => {
-  for (const { url, imageType } of links) {
+  for (const { id, url, imageType } of links) {
     if (imageType === "none") {
       console.log("Skipping image generation for", url);
       continue;
@@ -52,10 +52,6 @@ async function getOGImage(url: string) {
 
     const image =
       imageType === "capture" ? await captureImage(url) : await getOGImage(url);
-
-    const urlObject = new URL(url);
-
-    const id = urlObject.hostname.replace(/\./g, "-");
 
     fs.writeFileSync(
       join(__dirname, "../public/frame-images/", `${id}.png`),

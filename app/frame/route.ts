@@ -10,8 +10,6 @@ export async function POST(request: NextRequest) {
     link = await fetchLink();
   }
 
-  const id = new URL(link.url).hostname.replace(/\./g, "-");
-
   if (data.untrustedData.buttonIndex === 2) {
     return NextResponse.redirect(
       `https://nouns.ooo/redirects/${
@@ -27,11 +25,11 @@ export async function POST(request: NextRequest) {
         <html>
           <head>
                 <meta property="fc:frame" content="vNext" />
-                <meta property="fc:frame:image" content="https://nouns.ooo/frame-images/${id}.png" />
+                <meta property="fc:frame:image" content="https://nouns.ooo/frame-images/${link.id}.png" />
                 <meta property="fc:frame:button:1" content="I'm Feeling Nounish" />
                 <meta property="fc:frame:button:2" content="Explore ➜" />
                 <meta property="fc:frame:button:2:action" content="post_redirect" />
-                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?id=${id}" />
+                <meta property="fc:frame:post_url" content="https://nouns.ooo/frame?id=${link.id}" />
           </head>
         </html>
         `,
