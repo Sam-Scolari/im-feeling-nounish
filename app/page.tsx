@@ -2,6 +2,8 @@ import Background from "@/components/Background";
 import fetchLink from "@/utils/fetchLink";
 import { headers } from "next/headers";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   // const isMobile = headers().get("x-device-type") === "mobile";
 
