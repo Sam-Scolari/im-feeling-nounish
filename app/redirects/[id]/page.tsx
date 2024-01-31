@@ -1,5 +1,8 @@
 import { redirect } from "next/navigation";
+import { links } from "@/utils/fetchLink";
 
 export default function Redirect(props: { params: { id: string } }) {
-  redirect(`/${props.params.id}`);
+  const link = links.find((link) => link.id === props.params.id);
+
+  redirect(link?.url ?? "/");
 }
